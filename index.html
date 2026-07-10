@@ -62,12 +62,7 @@
       pointer-events: none;
     }
 
-    [data-theme="invitation"] body::before { opacity: 0.03; }
-
-    [data-theme="invitation"] .card {
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
-    }
+    [data-theme="invitation"] body::before { opacity: 0; }
 
     [data-theme="invitation"] .open-gate-btn {
       background: linear-gradient(135deg, var(--accent-light), var(--accent));
@@ -87,6 +82,34 @@
       gap: 0;
       min-height: 100vh;
       box-shadow: 0 0 80px rgba(var(--shadow-rgb), 0.1);
+    }
+
+    [data-theme="invitation"] body {
+      background: #3A4034;
+    }
+
+    [data-theme="invitation"] .card {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+      background-color: #5C6348;
+      background-image: url("images/theme-background.png");
+      background-size: 94% auto;
+      background-position: center top;
+      background-repeat: repeat-y;
+    }
+
+    [data-theme="invitation"] .open-gate-bg {
+      background-image: url("images/theme-background.png") !important;
+      background-size: 94% auto !important;
+      background-position: center top !important;
+      background-repeat: repeat-y !important;
+      filter: none;
+      transform: none;
+      inset: 0;
+    }
+
+    [data-theme="invitation"] .open-gate-scrim {
+      background: radial-gradient(ellipse 90% 80% at 50% 45%, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.42) 100%);
     }
 
     .corner {
@@ -930,12 +953,12 @@
       petals: ['#6B8F78', '#5A7D68', '#4A6B58', '#8FAD9A', '#A8C4B0']
     },
     invitation: {
-      pageBg: '#2E3028', cardBg: '#7A824E', text: '#FAF8F5',
+      pageBg: '#3A4034', cardBg: '#5C6348', text: '#FAF8F5',
       accent: '#F5F0E6', accentLight: '#FFFFFF', accentDark: '#D8D4C8',
       muted: '#C5C9B4', textBody: '#EDEAE0', textMid: '#D8D4C8',
-      label: '#B8BCA4', venue: '#FFFFFF', surface: '#6B7250', border: '#8E9668',
+      label: '#B8BCA4', venue: '#FFFFFF', surface: '#4F5640', border: '#8A9668',
       shadowRgb: '58, 66, 48', btnText: '#3D4230',
-      petals: ['#C8CDB8', '#A8AD98', '#E8E4D4', '#8A9168', '#D4CFBF']
+      petals: ['#8A9168', '#6E7560', '#A8AD98', '#5C6348', '#C8CDB8']
     }
   };
 
@@ -993,7 +1016,7 @@
 
     events: [
       {
-        title: 'Reception',
+        title: 'Inviting you to our reception',
         day: '26',
         dateText: 'August 2026 · Wednesday',
         hijri: '13 Rabi al-Awwal 1448 AH',
@@ -1001,7 +1024,7 @@
         venue: 'Rahmath Manzil<br>Kariyad'
       },
       {
-        title: 'Nikah',
+        title: 'Witness our nikah',
         day: '27',
         dateText: 'August 2026 · Thursday',
         hijri: '14 Rabi al-Awwal 1448 AH',
