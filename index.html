@@ -457,6 +457,83 @@
       max-width: 420px;
       text-align: center;
     }
+
+    .monogram-showcase {
+      max-width: 380px;
+      margin: clamp(4px, 1vh, 8px) auto;
+    }
+
+    .monogram-showcase .couple-photo-frame {
+      padding: clamp(10px, 2.5vw, 18px) clamp(12px, 3vw, 20px);
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .monogram-showcase .couple-photo-frame::before,
+    .monogram-showcase .couple-photo-frame::after {
+      display: none;
+    }
+
+    .monogram-3d {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+      perspective: 1000px;
+    }
+
+    .monogram-3d::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 2px;
+      width: 55%;
+      height: 14px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse, rgba(79, 86, 64, 0.45) 0%, transparent 72%);
+      filter: blur(5px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .monogram-3d-inner {
+      position: relative;
+      display: inline-block;
+      transform-style: preserve-3d;
+      animation: monogramAppear 1.1s ease both, monogramFloat3d 6s ease-in-out 1.1s infinite;
+      transition: transform 0.45s ease;
+    }
+
+    .monogram-showcase .couple-photo-frame img.monogram-3d-main {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto;
+      min-height: auto;
+      object-fit: contain;
+      background: transparent;
+      filter: invert(1) brightness(1.06);
+      transform: translateZ(18px);
+      backface-visibility: hidden;
+    }
+
+    .monogram-showcase .couple-photo-frame:hover .monogram-3d-inner {
+      animation-play-state: paused;
+      transform: translateY(-10px) rotateX(12deg) rotateY(-5deg) scale(1.04);
+    }
+
+    @keyframes monogramAppear {
+      from { opacity: 0; transform: scale(0.94) rotateX(12deg); }
+      to { opacity: 1; transform: scale(1) rotateX(7deg); }
+    }
+
+    @keyframes monogramFloat3d {
+      0%, 100% { transform: translateY(0) rotateX(7deg) rotateY(0deg); }
+      50% { transform: translateY(-8px) rotateX(11deg) rotateY(3deg); }
+    }
+
     .couple-photo-frame {
       position: relative;
       display: inline-block;
@@ -832,9 +909,13 @@
 
   <div class="divider"><span></span><div class="divider-gem"></div><span></span></div>
 
-  <div class="couple-photo-wrap">
+  <div class="couple-photo-wrap monogram-showcase">
     <div class="couple-photo-frame">
-      <img id="couplePhoto" src="images/Invitation1.PNG" alt="Haifa & Rami Salam — Nikkah invitation" />
+      <div class="monogram-3d">
+        <div class="monogram-3d-inner">
+          <img class="monogram-3d-main" id="couplePhoto" src="images/Monogram.PNG" alt="Haifa & Rami — wedding monogram" />
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1042,8 +1123,8 @@
     music: 'audio/saliAudio.mp3',
     musicVolume: 0.45,
 
-    photo: 'images/Invitation1.PNG',
-    photoAlt: 'Haifa & Rami Salam — Nikkah invitation',
+    photo: 'images/Monogram.PNG',
+    photoAlt: 'Haifa & Rami — wedding monogram',
     shareImage: 'images/share-cover.jpeg',
 
     notice: {
