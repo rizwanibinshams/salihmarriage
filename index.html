@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nikkah Invitation — Muhammed Salih & Saniya</title>
+  <title>Nikkah Invitation — Aysha Haifa Ansar & Rami Salam</title>
 
   <!-- WhatsApp / iMessage / Facebook need absolute URLs (HTTPS once SSL is active on your domain) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://salihmarriage.codeteak.com/" />
-  <meta property="og:title" content="Nikkah Invitation — Muhammed Salih & Saniya" />
-  <meta property="og:description" content="Nikkah of Muhammed Salih P & Saniya · 14 June 2026 · Pulppakary Juma Masjid" />
+  <meta property="og:title" content="Nikkah Invitation — Aysha Haifa Ansar & Rami Salam" />
+  <meta property="og:description" content="Nikkah of Aysha Haifa Ansar & Rami Salam · 27 August 2026 · Reception 26 August · Rahmath Manzil, Kariyad" />
   <!-- Use https:// for og:image after GitHub Pages shows Enforce HTTPS (recommended for WhatsApp) -->
-  <meta property="og:image" content="http://salihmarriage.codeteak.com/images/saalimarriage.jpg" />
+  <meta property="og:image" content="http://salihmarriage.codeteak.com/images/cover1.jpeg" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1254" />
-  <meta property="og:image:height" content="1254" />
-  <meta property="og:image:alt" content="Muhammed Salih & Saniya — Nikkah invitation" />
+  <meta property="og:image:width" content="1290" />
+  <meta property="og:image:height" content="1840" />
+  <meta property="og:image:alt" content="Aysha Haifa Ansar & Rami Salam — Nikkah invitation" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nikkah Invitation — Muhammed Salih & Saniya" />
-  <meta name="twitter:description" content="Nikkah of Muhammed Salih P & Saniya · 14 June 2026 · Pulppakary Juma Masjid" />
-  <meta name="twitter:image" content="http://salihmarriage.codeteak.com/images/saalimarriage.jpg" />
+  <meta name="twitter:title" content="Nikkah Invitation — Aysha Haifa Ansar & Rami Salam" />
+  <meta name="twitter:description" content="Nikkah of Aysha Haifa Ansar & Rami Salam · 27 August 2026 · Reception 26 August · Rahmath Manzil, Kariyad" />
+  <meta name="twitter:image" content="http://salihmarriage.codeteak.com/images/cover1.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -489,6 +489,21 @@
       border-color: var(--accent);
     }
 
+    .instruction-wrap {
+      text-align: center;
+      width: 100%;
+      max-width: 420px;
+      margin-top: clamp(8px, 2vh, 16px);
+    }
+    .instruction-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 28px rgba(var(--shadow-rgb), 0.12);
+      background: var(--surface);
+    }
+
     @media (max-width: 560px) {
       .card { padding: 56px 22px 48px; }
       .names-row { grid-template-columns: 1fr; gap: 4px; }
@@ -687,7 +702,7 @@
   <div class="open-gate-scrim" aria-hidden="true"></div>
   <div class="open-gate-content">
     <div class="open-gate-tag">Nikkah Invitation</div>
-    <div class="open-gate-names" id="openGateNames">Salih &amp; Saniya</div>
+    <div class="open-gate-names" id="openGateNames">Aysha &amp; Rami</div>
     <div class="open-gate-motif" aria-hidden="true">
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M28 10a14 14 0 1 0 0 24 11 11 0 0 1 0-24z" stroke="currentColor" stroke-width="1.15" fill="none"/>
@@ -766,7 +781,7 @@
 
   <div class="couple-photo-wrap">
     <div class="couple-photo-frame">
-      <img id="couplePhoto" src="images/saalimarriage.jpg" alt="Muhammed Salih & Saniya" />
+      <img id="couplePhoto" src="images/cover1.jpeg" alt="Aysha Haifa Ansar & Rami Salam" />
     </div>
   </div>
 
@@ -824,6 +839,10 @@
 
   <div class="closing">
     <p>Your presence and heartfelt duas<br>will make our day even more special.</p>
+  </div>
+
+  <div class="instruction-wrap" id="instructionWrap">
+    <img id="instructionImage" src="images/instruction.jpg" alt="Wedding invitation instructions" />
   </div>
 
   <div class="site-credit">
@@ -898,58 +917,64 @@
 
   const CONFIG = {
     // Pick a preset: 'gold' (original cream) | 'blush' (rose) | 'sage' (green)
-    theme: 'gold',
+    theme: 'blush',
     // Or use theme: 'custom' and set your own hex colors below:
     colors: null,
 
-    title: 'Nikkah Invitation — Muhammed Salih & Saniya',
-    shortNames: 'Salih & Saniya',
+    title: 'Nikkah Invitation — Aysha Haifa Ansar & Rami Salam',
+    shortNames: 'Aysha & Rami',
 
     groom: {
-      name: 'Muhammed Salih P',
+      name: 'Rami Salam',
       relation: 'Son of',
-      parents: ['Hashim K', 'Sainaba'],
-      extraLineage: null
+      parents: ['Abdul Salam', 'Shaheena'],
+      extraLineage: `
+        <span class="relation" style="margin-top:8px;">Residence</span>
+        <strong>Parachotil (H)</strong>, Thamarassery
+      `
     },
 
     bride: {
-      name: 'Saniya',
+      name: 'Aysha Haifa Ansar',
       relation: 'Daughter of',
-      parents: ['Late Rafi Baig', 'Abeena PP'],
-      extraLineage: null
+      parents: ['Ansar Aboobacker', 'Suhaira Ansar'],
+      extraLineage: `
+        <span class="relation" style="margin-top:8px;">Granddaughter of</span>
+        Late <strong>Welcome Aboobacker Haji</strong> &amp; <strong>Hashim PV</strong>
+      `
     },
 
     events: [
       {
-        title: 'Nikkah &<br>Marriage Ceremony',
-        day: '14',
-        dateText: 'June 2026 · Sunday',
-        time: 'After Asar',
-        venue: 'Pulppakary Juma Masjid'
+        title: 'Reception',
+        day: '26',
+        dateText: 'August 2026 · Wednesday',
+        hijri: '13 Rabi al-Awwal 1448 AH',
+        time: '5:00 PM – 10:00 PM',
+        venue: 'Rahmath Manzil<br>Kariyad'
       },
       {
-        title: 'Reception',
-        day: '14',
-        dateText: 'June 2026 · Sunday',
-        time: '12:00 PM',
-        venue: 'Sabeeja Manzil<br>Veliyambra'
+        title: 'Nikah',
+        day: '27',
+        dateText: 'August 2026 · Thursday',
+        hijri: '14 Rabi al-Awwal 1448 AH',
+        time: '4:30 PM',
+        venue: 'Groom\'s residence<br>Parachotil (H), Thamarassery'
       }
     ],
 
-    // 14 June 2026 ≈ 28 Dhul Hijjah 1447 AH (Umm al-Qura / standard converters; ±1 day by moon sighting)
-    eventHijri: '28 Dhul Hijjah 1447 AH',
-
-    countdownTarget: '2026-06-14T23:59:59',
+    countdownTarget: '2026-08-27T16:30:00',
     countdownLabel: 'Counting down to the Nikkah',
 
-    mapUrl: 'https://maps.app.goo.gl/G1kCZcs4CZPiuXk2A?g_st=ic',
-    receptionMapUrl: 'https://maps.app.goo.gl/g7ZJMhsuaZ4nBsMVA?g_st=ic',
+    mapUrl: 'https://maps.app.goo.gl/zD5tn7utnDAf93aR6?g_st=ic',
+    receptionMapUrl: 'https://maps.app.goo.gl/7Dtz44qbaoSnbFdC8',
 
     music: 'audio/saliAudio.mp3',
     musicVolume: 0.45,
 
-    photo: 'images/saalimarriage.jpg',
-    photoAlt: 'Muhammed Salih & Saniya',
+    photo: 'images/cover1.jpeg',
+    photoAlt: 'Aysha Haifa Ansar & Rami Salam',
+    instructionImage: 'images/instruction.jpg',
 
     closingMessage: 'Your presence and heartfelt duas<br>will make our day even more special.'
   };
@@ -1023,6 +1048,11 @@
   });
   document.getElementById('couplePhoto').src = CONFIG.photo;
   document.getElementById('couplePhoto').alt = CONFIG.photoAlt;
+  if (CONFIG.instructionImage) {
+    document.getElementById('instructionImage').src = CONFIG.instructionImage;
+  } else {
+    document.getElementById('instructionWrap').style.display = 'none';
+  }
   document.getElementById('congratsNames').innerHTML = 'Mabrook<br>' + CONFIG.shortNames;
   document.querySelector('.closing p').innerHTML = CONFIG.closingMessage;
 
