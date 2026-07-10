@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nikkah Invitation — Aysha Haifa Ansar & Rami Salam</title>
+  <title>Nikkah Invitation — Haifa & Rami Salam</title>
 
-  <!-- WhatsApp share image: square card (1200×1200). Site photo stays cover1.jpeg.
-       REVERT to full portrait: change share-square.jpeg → cover1.jpeg, set size 1290×1840 -->
+  <!-- WhatsApp share image: monogram square (1200×1200) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://haifawedding.codeteak.com/" />
-  <meta property="og:title" content="Nikkah Invitation — Aysha Haifa Ansar & Rami Salam" />
-  <meta property="og:description" content="Nikkah of Aysha Haifa Ansar & Rami Salam · 27 August 2026 · Reception 26 August · Rahmath Manzil, Kariyad" />
-  <meta property="og:image" content="https://haifawedding.codeteak.com/images/share-square.jpeg" />
-  <meta property="og:image:secure_url" content="https://haifawedding.codeteak.com/images/share-square.jpeg" />
+  <meta property="og:title" content="Nikkah Invitation — Haifa & Rami Salam" />
+  <meta property="og:description" content="Nikkah of Haifa & Rami Salam · 27 August 2026 · Reception 26 August · Rahmath Manzil, Kariyad" />
+  <meta property="og:image" content="https://haifawedding.codeteak.com/images/share-monogram.jpeg" />
+  <meta property="og:image:secure_url" content="https://haifawedding.codeteak.com/images/share-monogram.jpeg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="1200" />
-  <meta property="og:image:alt" content="Aysha Haifa Ansar & Rami Salam — wedding invitation cover" />
+  <meta property="og:image:alt" content="Haifa & Rami — wedding monogram" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nikkah Invitation — Aysha Haifa Ansar & Rami Salam" />
-  <meta name="twitter:description" content="Nikkah of Aysha Haifa Ansar & Rami Salam · 27 August 2026 · Reception 26 August · Rahmath Manzil, Kariyad" />
-  <meta name="twitter:image" content="https://haifawedding.codeteak.com/images/share-square.jpeg" />
+  <meta name="twitter:title" content="Nikkah Invitation — Haifa & Rami Salam" />
+  <meta name="twitter:description" content="Nikkah of Haifa & Rami Salam · 27 August 2026 · Reception 26 August · Rahmath Manzil, Kariyad" />
+  <meta name="twitter:image" content="https://haifawedding.codeteak.com/images/share-monogram.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,6 +60,19 @@
       position: fixed; inset: 0; z-index: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
       pointer-events: none;
+    }
+
+    [data-theme="invitation"] body::before { opacity: 0.03; }
+
+    [data-theme="invitation"] .card {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    }
+
+    [data-theme="invitation"] .open-gate-btn {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      color: var(--btn-text);
+      border-color: var(--border);
     }
 
     .card {
@@ -721,7 +733,7 @@
   <div class="open-gate-scrim" aria-hidden="true"></div>
   <div class="open-gate-content">
     <div class="open-gate-tag">Nikkah Invitation</div>
-    <div class="open-gate-names" id="openGateNames">Aysha &amp; Rami</div>
+    <div class="open-gate-names" id="openGateNames">Haifa &amp; Rami</div>
     <div class="open-gate-motif" aria-hidden="true">
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M28 10a14 14 0 1 0 0 24 11 11 0 0 1 0-24z" stroke="currentColor" stroke-width="1.15" fill="none"/>
@@ -799,13 +811,32 @@
 
   <div class="couple-photo-wrap">
     <div class="couple-photo-frame">
-      <img id="couplePhoto" src="images/cover1.jpeg" alt="Aysha Haifa Ansar & Rami Salam" />
+      <img id="couplePhoto" src="images/Invitation1.PNG" alt="Haifa & Rami Salam — Nikkah invitation" />
     </div>
   </div>
 
   <div class="divider"><span></span><div class="divider-gem"></div><span></span></div>
 
   <div class="events-grid" id="eventsGrid"></div>
+
+  <div class="divider"><span></span><div class="divider-gem"></div><span></span></div>
+
+  <div id="mapLinks" style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+    <a class="map-link" id="mapLinkNikkah" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
+      </svg>
+      Nikkah Venue on Maps
+    </a>
+    <a class="map-link" id="mapLinkReception" href="#" target="_blank" rel="noopener" style="display:none">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
+      </svg>
+      Reception Venue on Maps
+    </a>
+  </div>
 
   <div class="divider"><span></span><div class="divider-gem"></div><span></span></div>
 
@@ -832,25 +863,6 @@
         <span class="cd-lbl">Secs</span>
       </div>
     </div>
-  </div>
-
-  <div style="margin-top: clamp(16px,2.5vh,24px);"></div>
-
-  <div id="mapLinks" style="display:flex; flex-direction:column; align-items:center; gap:12px;">
-    <a class="map-link" id="mapLinkNikkah" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-        <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
-      </svg>
-      Nikkah Venue on Maps
-    </a>
-    <a class="map-link" id="mapLinkReception" href="#" target="_blank" rel="noopener" style="display:none">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-        <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
-      </svg>
-      Reception Venue on Maps
-    </a>
   </div>
 
   <div class="divider"><span></span><div class="divider-gem"></div><span></span></div>
@@ -891,7 +903,7 @@
   //  EDIT YOUR DETAILS HERE
   // ═══════════════════════════════════════════════════════════════
 
-  // Color themes — change theme to: 'gold' | 'blush' | 'sage' | 'custom'
+  // Color themes — 'invitation' matches Invitation1.PNG olive card | REVERT: theme: 'blush'
   const THEMES = {
     gold: {
       pageBg: '#FAF3E8', cardBg: '#F3E8D4', text: '#2C1C08',
@@ -916,6 +928,14 @@
       label: '#5E7568', venue: '#2A3830', surface: '#D4E2DA', border: '#B8CEC4',
       shadowRgb: '74, 107, 88', btnText: '#F4FAF6',
       petals: ['#6B8F78', '#5A7D68', '#4A6B58', '#8FAD9A', '#A8C4B0']
+    },
+    invitation: {
+      pageBg: '#2E3028', cardBg: '#7A824E', text: '#FAF8F5',
+      accent: '#F5F0E6', accentLight: '#FFFFFF', accentDark: '#D8D4C8',
+      muted: '#C5C9B4', textBody: '#EDEAE0', textMid: '#D8D4C8',
+      label: '#B8BCA4', venue: '#FFFFFF', surface: '#6B7250', border: '#8E9668',
+      shadowRgb: '58, 66, 48', btnText: '#3D4230',
+      petals: ['#C8CDB8', '#A8AD98', '#E8E4D4', '#8A9168', '#D4CFBF']
     }
   };
 
@@ -923,6 +943,7 @@
     const base = THEMES[themeName] || THEMES.blush;
     const t = customColors ? { ...base, ...customColors } : base;
     const r = document.documentElement.style;
+    document.documentElement.dataset.theme = themeName in THEMES ? themeName : 'blush';
     r.setProperty('--page-bg', t.pageBg);
     r.setProperty('--card-bg', t.cardBg);
     r.setProperty('--text', t.text);
@@ -942,13 +963,13 @@
   }
 
   const CONFIG = {
-    // Pick a preset: 'gold' (cream) | 'blush' (rose) | 'sage' (green)
-    theme: 'blush',
+    // REVERT: theme: 'blush'
+    theme: 'invitation',
     // Or use theme: 'custom' and set your own hex colors below:
     colors: null,
 
-    title: 'Nikkah Invitation — Aysha Haifa Ansar & Rami Salam',
-    shortNames: 'Aysha & Rami',
+    title: 'Nikkah Invitation — Haifa & Rami Salam',
+    shortNames: 'Haifa & Rami',
 
     groom: {
       name: 'Rami Salam',
@@ -985,7 +1006,7 @@
         dateText: 'August 2026 · Thursday',
         hijri: '14 Rabi al-Awwal 1448 AH',
         time: '4:30 PM',
-        venue: 'Groom\'s residence<br>Parachotil (H), Thamarassery'
+        venue: 'Groom\'s venue<br>Meruzila Convention Centre<br>Elettil'
       }
     ],
 
@@ -998,8 +1019,9 @@
     music: 'audio/saliAudio.mp3',
     musicVolume: 0.45,
 
-    photo: 'images/cover1.jpeg',
-    photoAlt: 'Aysha Haifa Ansar & Rami Salam',
+    photo: 'images/Invitation1.PNG',
+    photoAlt: 'Haifa & Rami Salam — Nikkah invitation',
+    shareImage: 'images/share-monogram.jpeg',
 
     notice: {
       enabled: true,
@@ -1103,13 +1125,13 @@
 
   document.getElementById('namesRow').innerHTML = `
     <div class="person">
-      <div class="person-name">${CONFIG.groom.name}</div>
-      <div class="person-lineage">${renderLineage(CONFIG.groom)}</div>
+      <div class="person-name">${CONFIG.bride.name}</div>
+      <div class="person-lineage">${renderLineage(CONFIG.bride)}</div>
     </div>
     <div class="amp-col">&amp;</div>
     <div class="person">
-      <div class="person-name">${CONFIG.bride.name}</div>
-      <div class="person-lineage">${renderLineage(CONFIG.bride)}</div>
+      <div class="person-name">${CONFIG.groom.name}</div>
+      <div class="person-lineage">${renderLineage(CONFIG.groom)}</div>
     </div>
   `;
 
