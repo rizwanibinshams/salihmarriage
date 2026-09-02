@@ -572,6 +572,15 @@
       flex-shrink: 0;
     }
 
+    .map-link--wide {
+      letter-spacing: 0.08em;
+      text-align: center;
+      max-width: 360px;
+      white-space: normal;
+      line-height: 1.5;
+      padding: 12px 18px;
+    }
+
     .couple-photo-wrap {
       width: 100%;
       max-width: 280px;
@@ -950,8 +959,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 20px;
       width: 100%;
+    }
+
+    .map-link-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 360px;
     }
 
     #countdown-wrap {
@@ -1205,13 +1223,24 @@
   <div class="divider"><span></span><div class="divider-gem"></div><span></span></div>
 
   <div class="map-links" id="mapLinks">
-    <a class="map-link" id="mapLinkNikkah" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-        <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
-      </svg>
-      Nikkah Venue on Maps
-    </a>
+    <div class="map-link-group" id="mapGroupAkhwaat">
+      <a class="map-link map-link--wide" id="mapLinkAkhwaat" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
+        </svg>
+        Akhwaat Night — Follow the Map to Our Gathering
+      </a>
+    </div>
+    <div class="map-link-group">
+      <a class="map-link" id="mapLinkNikkah" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
+        </svg>
+        Nikkah Venue on Maps
+      </a>
+    </div>
     <a class="map-link" id="mapLinkReception" href="#" target="_blank" rel="noopener" style="display:none">
       <svg viewBox="0 0 24 24">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -1419,6 +1448,10 @@
     countdownLabel: 'Counting down to the Nikkah',
 
     mapUrl: 'https://maps.app.goo.gl/d24S2NLFF7H2y5Sn8?g_st=aw',
+    akhwaatMap: {
+      label: 'Akhwaat Night — Follow the Map to Our Gathering',
+      url: 'https://maps.google.com/?q=11.747589,75.596130'
+    },
     receptionMapUrl: null,
 
     music: 'audio/saliAudio.mp3',
@@ -1452,6 +1485,20 @@
   document.getElementById('invitationTag').textContent = 'Nikkah Invitation';
   document.getElementById('countdownLabel').textContent = CONFIG.countdownLabel;
   document.getElementById('mapLinkNikkah').href = CONFIG.mapUrl;
+  if (CONFIG.akhwaatMap?.url) {
+    const akhwaatLink = document.getElementById('mapLinkAkhwaat');
+    akhwaatLink.href = CONFIG.akhwaatMap.url;
+    if (CONFIG.akhwaatMap.label) {
+      akhwaatLink.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
+        </svg>
+        ${CONFIG.akhwaatMap.label}`;
+    }
+  } else {
+    document.getElementById('mapGroupAkhwaat').style.display = 'none';
+  }
   if (CONFIG.receptionMapUrl) {
     const recMap = document.getElementById('mapLinkReception');
     recMap.href = CONFIG.receptionMapUrl;
