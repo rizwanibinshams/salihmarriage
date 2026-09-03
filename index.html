@@ -368,6 +368,17 @@
       margin-top: 6px;
       margin-bottom: 2px;
     }
+    .person-lineage .lineage-house {
+      display: block;
+      margin-top: 8px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--venue);
+      letter-spacing: 0.04em;
+    }
+    .person-lineage .parent-amp {
+      margin: 0 0.2em;
+    }
 
     .amp-col {
       font-family: 'Cormorant Garamond', serif;
@@ -933,6 +944,16 @@
       }
 
       .person-lineage { font-size: clamp(0.75rem, 3.2vw, 0.9rem); }
+      .person-lineage .parent-name {
+        display: block;
+      }
+      .person-lineage .parent-amp {
+        display: block;
+        margin: 2px 0;
+      }
+      .person-lineage .lineage-house {
+        margin-top: 10px;
+      }
 
       .monogram-showcase,
       .couple-photo-wrap { max-width: min(240px, 75vw); }
@@ -1450,6 +1471,7 @@
       relation: 'Son of',
       parents: ['Mr. Noushad', 'Mrs. Zeenath'],
       extraLineage: `
+        <span class="lineage-house">Baithul Hamd</span>
         <span class="relation" style="margin-top:8px;">Grandson of</span>
         <strong>TH Hameed</strong> &amp; <strong>TV Abdul Salam </strong>
       `
@@ -1458,9 +1480,9 @@
     bride: {
       name: 'Binth Abdul Azeez',
       relation: 'Daughter of',
-      parents: ['Abdul Azeez Kunhamoo Pk', 'Maimoona Abdurahman VP'],
+      parents: ['Mr. Abdul Azeez Kunhamoo Pk', 'Mrs. Maimoona Abdurahman VP'],
       extraLineage: `
-        <strong>Pakanhiyil House</strong>
+        <span class="lineage-house">Pakanhiyil House</span>
         <span class="relation" style="margin-top:8px;">Granddaughter of</span>
         <strong>PK Kunhamoo Master</strong> &amp; <strong>Late Abdurahman VP</strong>
       `
@@ -1608,9 +1630,10 @@
   document.querySelector('.closing p').innerHTML = CONFIG.closingMessage;
 
   function renderLineage(person) {
-    const parents = person.parents.map((p, i) =>
-      i === 0 ? `<strong>${p}</strong>` : ` &amp; <strong>${p}</strong>`
-    ).join('');
+    const parents = person.parents.map((p, i) => {
+      const name = `<strong class="parent-name">${p}</strong>`;
+      return i === 0 ? name : `<span class="parent-amp">&amp;</span>${name}`;
+    }).join('');
     let html = `<span class="relation">${person.relation}</span>${parents}`;
     if (person.extraLineage) {
       html += person.extraLineage;
