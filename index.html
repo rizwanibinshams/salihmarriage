@@ -944,12 +944,16 @@
       }
 
       .person-lineage { font-size: clamp(0.75rem, 3.2vw, 0.9rem); }
-      .person-lineage .parent-name {
+      .names-row .person:first-child .parent-name {
         display: block;
       }
-      .person-lineage .parent-amp {
+      .names-row .person:first-child .parent-amp {
         display: block;
         margin: 2px 0;
+      }
+      .names-row .person:last-child .parent-name,
+      .names-row .person:last-child .parent-amp {
+        display: inline;
       }
       .person-lineage .lineage-house {
         margin-top: 10px;
