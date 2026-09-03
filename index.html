@@ -294,7 +294,7 @@
 
     .person-name {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
+      font-weight: 700;
       font-style: italic;
       font-size: clamp(1.1rem, 3.2vw, 1.75rem);
       line-height: 1.25;
@@ -306,10 +306,31 @@
     [data-theme="sage"] .person-name {
       font-family: 'Cinzel', serif;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #3A5548;
+      background: linear-gradient(
+        115deg,
+        #2F463A 0%,
+        #4A6B58 22%,
+        #C4A574 42%,
+        #E8D5A8 50%,
+        #C4A574 58%,
+        #4A6B58 78%,
+        #2F463A 100%
+      );
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 0 rgba(196, 165, 116, 0.35));
+      animation: name-glaze 5.5s ease-in-out infinite;
+    }
+
+    @keyframes name-glaze {
+      0%, 100% { background-position: 0% center; }
+      50% { background-position: 100% center; }
     }
 
     .person-hosts {
@@ -808,7 +829,7 @@
       direction: rtl;
       text-align: center;
       width: 100%;
-      margin-top: clamp(18px, 2.5vh, 26px);
+      margin-top: clamp(14px, 2vh, 22px);
       letter-spacing: 0.02em;
     }
 
@@ -1230,6 +1251,8 @@
 
   <div class="events-grid" id="eventsGrid"></div>
 
+  <div class="closing-insha">إن شاء الله</div>
+
   <div class="divider"><span></span><div class="divider-gem"></div><span></span></div>
 
   <div class="map-links" id="mapLinks">
@@ -1316,8 +1339,6 @@
     <p class="notice-text" id="noticeMessage"></p>
     <p class="notice-thanks" id="noticeThanks"></p>
   </div>
-
-  <div class="closing-insha">إن شاء الله</div>
 
   <div class="site-credit">
     <p>Best wishes from <a href="https://codeteak.com" target="_blank" rel="noopener noreferrer">CodeTeak Technologies</a></p>
@@ -1419,7 +1440,7 @@
     shortNames: 'Binth & Nizwan',
 
     hosts: {
-      names: 'Mr Abdul Azeez & Mrs Maimoona VP',
+      names: 'Mr Abdul Azeez Kunhamoo Pk & Mrs Maimoona Abdurahman VP',
       residence: 'Pakanhiyil House'
     },
     inviteLine: 'We cordially invite your esteemed presence with family on the auspicious occasion of the Nikkah ceremony of our daughter',
@@ -1427,7 +1448,7 @@
     groom: {
       name: 'Mohammed Nizwan',
       relation: 'Son of',
-      parents: ['Noushad', 'Zeenath'],
+      parents: ['Mr. Noushad', 'Mrs. Zeenath'],
       extraLineage: `
         <span class="relation" style="margin-top:8px;">Grandson of</span>
         <strong>TH Hameed</strong> &amp; <strong>TV Abdul Salam </strong>
@@ -1437,11 +1458,11 @@
     bride: {
       name: 'Binth Abdul Azeez',
       relation: 'Daughter of',
-      parents: ['Mr Abdul Azeez', 'Mrs Maimoona VP'],
+      parents: ['Abdul Azeez Kunhamoo Pk', 'Maimoona Abdurahman VP'],
       extraLineage: `
         <strong>Pakanhiyil House</strong>
         <span class="relation" style="margin-top:8px;">Granddaughter of</span>
-        <strong>PK Kunhammoo Master</strong> &amp; <strong>Late Abdurahman VP</strong>
+        <strong>PK Kunhamoo Master</strong> &amp; <strong>Late Abdurahman VP</strong>
       `
     },
 
